@@ -36,6 +36,14 @@
             <a-asset-item id="rock-model" src="Models/exterior/Rock.glb"></a-asset-item>
             <a-asset-item id="orchid-model" src="Models/decorations/Orchid.glb"></a-asset-item>
             <a-asset-item id="plant-model" src="Models/decorations/Plant - Flower Pot.glb"></a-asset-item>
+            <a-asset-item id="bed-model" src="Models/exterior/bed_06.glb"></a-asset-item>
+            <a-asset-item id="garden-model" src="Models/exterior/spring_rose_garden-compressed.glb"></a-asset-item>
+            <a-asset-item id="amuse-model" src="Models/exterior/amusementpark2.glb"></a-asset-item>
+            <a-asset-item id="curtain-model" src="Models/exterior/curtains (1).glb"></a-asset-item>
+
+
+
+
 
 
 
@@ -50,7 +58,9 @@
             <img id="earth-tex" src="textures/ground_earth.jpg">
             <img id="park-tex" src="textures/park.jpg">
             <img id="pool-tex" src="textures/water.jpg">
-            
+            <img id="frame-tex" src="images/Futuristic hibiscus flower_.jpg">
+            <img id="frm-tex" src="images/download (3).jpg" alt="im">
+
         </a-assets>
 
         <a-entity id="rig" position="-0.349 -0.699 21.912" movement-controls="speed: 0.3; fly: true"
@@ -159,8 +169,8 @@
             scale="0.25 0.25 0.25"></a-entity>
 
 
-        <a-entity id="park-amenities" gltf-model="#park-model" position="16.966 -0.987 1.065"
-            scale="13.824 12.540 14.822" rotation="-0.722 -91.876 -0.677" shadow>
+        <a-entity id="park-amenities" gltf-model="#park-model" position="-18.766 -0.987 1.065"
+            scale="17.787 12.540 14.822" rotation="-0.721 -90.210 -0.677" shadow>
         </a-entity>
         <a-entity id="tree-1" gltf-model="#tree-model" position="10.470 -2.771 8.260" rotation="0 0 0" scale="1 1 1"
             shadow="cast: true"
@@ -178,28 +188,21 @@
         </a-entity>
         >
         <a-entity id="bedroom-design" position="1.098 1.131 1.343" scale="0.580 0.490 0.980">
-            <a-entity id="bed-unit">
-                <a-box position="0 0.2 0" width="2.2" height="0.4" depth="2.6" material="src: #wood-tex; color: #2b1d0e"
-                    shadow></a-box>
-                <a-box position="0 0.5 0" width="2" height="0.5" depth="2.4" color="#ffffff" shadow></a-box>
-                <a-box position="0 0.55 0.5" width="2.05" height="0.45" depth="1.5" color="#003366"
-                    roughness="0.8"></a-box>
-                <a-box position="0 1 -1.2" width="2.4" height="1.2" depth="0.15" color="#004d40" roughness="0.9"
-                    shadow></a-box>
-                <a-box position="-0.5 0.8 -0.9" width="0.7" height="0.2" depth="0.4" color="#d4af37"
-                    rotation="-10 0 0"></a-box>
-                <a-box position="0.5 0.8 -0.9" width="0.7" height="0.2" depth="0.4" color="#d4af37"
-                    rotation="-10 0 0"></a-box>
+
+            <a-entity id="bed-unit" position="0.224 0 0.586" scale="1 1.370 1">
+                <a-gltf-model src="#bed-model" position="-2.059 0 1.218" scale="9.521 9.400 7.477" shadow>
+                </a-gltf-model>
             </a-entity>
 
-
-
-            <a-box id="nightstand-L" position="-1.5 0.3 -1.0" width="0.5" height="0.6" depth="0.5" color="#bf360c"
-                shadow>
-                <a-cylinder position="0 0.4 0" radius="0.1" height="0.2" color="#ffd700">
-                    <a-light type="point" intensity="0.3" distance="2" color="#fff2cc" position="0 0.5 0"></a-light>
-                </a-cylinder>
-            </a-box>
+     <a-entity 
+    id="curtain-unit" 
+    gltf-model="#curtain-model" 
+    position="-0.213 0.551 2.343" 
+    scale="0.045 0.052 0.088"
+    shadow="cast: true; receive: false"
+    material="color: #E65353; emissive: #19B3DA; emissiveIntensity: 0.5"
+    animation__sway="property: rotation; from: 0 0 0; to: 1 1 1; dir: alternate; dur: 3000; easing: easeInOutSine; loop: true">
+</a-entity>
 
             <a-box id="nightstand-R" position="1.5 0.3 -1.0" width="0.5" height="0.6" depth="0.5" color="#bf360c"
                 shadow>
@@ -230,10 +233,21 @@
                 </a-box>
             </a-entity>
 
-            <a-plane id="painting" position="0 2 -1.26" width="1.5" height="1"
-                material="color: #ff4081; emissive: #ff4081; emissiveIntensity: 0.2"></a-plane>
-            <a-plane position="0 0.02 0.5" rotation="-90 0 0" width="6" height="5" color="#4a148c"
-                opacity="0.9"></a-plane>
+          <a-plane id="painting-hibiscus" 
+         position="-1.796 2 -1.260" 
+         width="1.5" 
+         height="1"
+         material="src: #frame-tex"
+         shadow>
+</a-plane>
+
+<a-plane id="painting-download" 
+         position="-0.270 2 -1.260" 
+         width="1.5" 
+         height="1"
+         material="src: #frm-tex"
+         shadow>
+</a-plane>
 
             <a-entity id="lounge-chair" position="2.057 0.368 1.869" . rotation="0 -86.487 0" scale="0.894 0.894 0.894">
                 <a-box width="1.1" height="0.4" depth="0.9" color="#ff4081" roughness="0.9" shadow></a-box>
@@ -345,6 +359,24 @@
         <a-assets>
             <audio id="jet-sound" src="sounds/jet-engine.mp3" preload="auto"></audio>
         </a-assets>
+
+        <a-entity 
+    id="garden-unit" 
+    gltf-model="#garden-model" 
+    position="-15.347 -2.941 -16.820" 
+    rotation="0 0 -0.752"
+    scale="7.205 7.205 7.205"
+    shadow="receive: true">
+</a-entity>
+
+<a-entity 
+    id="amuse-unit" 
+    gltf-model="#amuse-model" 
+    position="-69.159 6.763 -52.050" 
+    scale="55 55 55"
+    intensity="0.5"
+    shadow="receive: true">
+</a-entity>
 
         <a-entity position="0 20 0" animation="property: rotation; to: 0 360 0; dur: 15000; easing: linear; loop: true">
             <a-entity gltf-model="#jet-model" position="111.023 -0.387 21.699" rotation="0 -151.38 0" scale="2 2 2"
